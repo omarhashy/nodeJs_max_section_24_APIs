@@ -67,7 +67,7 @@ app.use("/auth", authRoutes);
 app.use((err, req, res, next) => {
   const status = err.statusCode ?? 500;
   const message = err.message;
-  const data = error.data;
+  const data = err.data;
   res.status(status).json({
     message: message,
     error: err,
